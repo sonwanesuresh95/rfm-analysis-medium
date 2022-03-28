@@ -71,6 +71,8 @@ def find_segments(df, customer_id):
             classes.append({row[1][customer_id]:'Loyal Accounts'})
         elif (row[1]['r'] in [3,4,5]) & (row[1]['f'] in [2,3]) & (row[1]['m'] in [2,3,4]):
             classes.append({row[1][customer_id]:'Potential Loyalist'})
+        elif (row[1]['r'] in [5]) & (row[1]['f'] in [1]) & (row[1]['m'] in [1,2,3,4,5]):
+            classes.append({row[1][customer_id]:'New Active Accounts'})
         elif (row[1]['r'] in [3,4,5]) & (row[1]['f'] in [1,2,3,4,5]) & (row[1]['m'] in [1,2]):
             classes.append({row[1][customer_id]:'Low Spenders'})
         elif (row[1]['r'] in [2,3]) & (row[1]['f'] in [1,2]) & (row[1]['m'] in [4,5]):
